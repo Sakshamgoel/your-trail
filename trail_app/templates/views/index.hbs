@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Your Trail
+        </title>
+        <link rel = "icon" href = "img/tree.png">
+        <link rel = "stylesheet" href = "css/style.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+        <script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+    </head>
+    <body>
+        {{> header }}
+
+        <!-- Slider -->
+        <section class = "carousel-container" style = "min-height: 60vh">
+            <div id = "slides" class = "carousel slide carousel-fade" data-ride = "carousel">
+                <ul class = "carousel-indicators">
+                    <li data-target = "#slides" data-slide-to = "0" class = "active"></li>
+                    <li data-target = "#slides" data-slide-to = "1" class = "active"></li>
+                    <li data-target = "#slides" data-slide-to = "2" class = "active"></li>
+                </ul>
+
+                <div class = "carousel-inner">
+                    <div class = "carousel-item active">
+                        <img src = "img/background.jpg" class = "d-block w-100">
+                        <div class = "carousel-caption">
+                            <h1 class = "display-2">Your Trail</h1>
+                            <h3>Find personalized trails closest to you</h3>
+                            <a class = "btn btn-primary btn-lg">VIEW DEMO</a>
+                        </div>
+                    </div>
+
+                    <div class = "carousel-item">
+                        <img src = "img/background2.jpg" class = "d-block w-100">
+                        <div class = "carousel-caption">
+                            <h1 class = "display-2">Trail App</h1>
+                            <h3>Take your Outdoor experience to the next level.</h3>
+                            <a class = "btn btn-primary btn-lg">VIEW DEMO</a>
+                        </div>
+                    </div>
+
+                    <div class = "carousel-item">
+                        <img src = "img/background3.jpg" class = "d-block w-100">
+                        <div class = "carousel-caption">
+                            <h1 class = "display-2">Trail App</h1>
+                            <a class = "btn btn-primary btn-lg">VIEW DEMO</a>
+                        </div>
+                    </div>
+                </div>
+
+                <a class = "carousel-control-prev" href = "#slides" role = "button" data-slide = "prev">
+                    <span class = "carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class = "sr-only">Previous</span>
+                </a>
+                <a class = "carousel-control-next" href = "#slides" role = "button" data-slide = "next">
+                    <span class = "carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class = "sr-only">Next</span>
+                </a>
+            </div>
+        </section>
+
+        <hr class = "my-4">
+
+        <!-- Form -->
+        <div class = "container-fluid padding text-center">
+            <div class = "row welcome">
+                <div class = "col-12">
+                    <h1 class = "diplay-4">Fill this form to get the best trails for you</h1>
+                </div>
+            </div>
+        </div>
+
+        <hr class = "my-0">
+
+        <div class = "container-fluid padding">
+            <form>
+                <div class = "form-group">
+                    <label for="location" style = "padding: 10px 0 0 5px">Enter location</label>
+                    <input class = "form-control" placeholder = "Where does your adventure take you?" id = "location">
+                </div>
+
+                <div class = "form-group">
+                    <label for = "max-distance">Trail Length</label>
+                    <select class = "form-control" name = "distance" id = "max-distance">
+                        <option>Max. Biking Distance (in miles)</option>
+                        <option>5</option>
+                        <option>10</option>
+                        <option>15</option>
+                        <option>20</option>
+                    </select>
+                </div>
+
+                <div class = "form-group">
+                    <label for = "max-distance">Trail Difficulty</label>
+                    <select class = "form-control" name = "distance" id = "max-difficulty">
+                        <option>Maximum Biking Difficulty</option>
+                        <option>Very Easy</option>
+                        <option>Easy</option>
+                        <option>Intermediate</option>
+                        <option>Expert</option>
+                        <option>Goku</option>
+                    </select>
+                </div>
+                <div class = "text-center">
+                    <button class = "btn btn-primary">search</button>
+                </div>
+            </form>
+        </div>
+            <p id = "message-1"></p>
+            <p id = "message-2"></p>
+            <p id = "message-3"></p>
+            <table class = "table" id = "result-table">
+                <thead>
+                    <tr>
+                        <th scope="col">Index</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Latitude</th>
+                        <th scope="col">Longitude</th>
+                        <th scope="col">Climb</th>
+                        <th scope="col">Descend</th>
+                        <th scope = "col">Distance</th>
+                        <th scope = "col">Distance</th>
+                    </tr>
+                </thead>
+                <tbody id = "result-body">
+                    <tr>
+                        <th scope="col">1</th>
+                        <th scope="col">Base Camp</th>
+                        <th scope="col">32.55339</th>
+                        <th scope="col">-85.47527</th>
+                        <th scope="col">27 ft</th>
+                        <th scope="col">-29 ft</th>
+                        <th scope = "col">0.29 miles</th>
+                        <th scope = "col">Easy</th>
+                    </tr>
+
+                    <tr>
+                        <th scope="col">2</th>
+                        <th scope="col">Bostick</th>
+                        <th scope="col">34.81744</th>
+                        <th scope="col">-86.6242</th>
+                        <th scope="col">171 ft</th>
+                        <th scope="col">-159 ft</th>
+                        <th scope = "col">1.4 miles</th>
+                        <th scope = "col">Black Diamond</th>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class = "row">
+            <div id = "map">
+
+            </div>
+        </div>
+
+        {{> footer }}
+        <script src = "js/frontend.js"></script>
+        {{!-- <script src = "js/map.js"></script> --}}
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB5fgqtj088P2oE357NH24bQvWioUNlG4Q&callback=initMap&libraries=&v=weekly" async></script>
+    </body>
+</html>
